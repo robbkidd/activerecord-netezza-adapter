@@ -37,8 +37,10 @@ Any errors are my own.
 
 Add these lines to your application's Gemfile:
 
+```ruby
     gem 'activerecord-netezza-adapter', 
         :git => 'https://github.com/robbkidd/activerecord-netezza-adapter'
+```
 
 And then execute:
 
@@ -54,18 +56,22 @@ your JRuby classpath.
 For example, place nzjdbc3.jar in vendor/lib/java. If using Warbler 
 to deploy your app as a WAR, include the following in config/warble.rb
 
-    config.java_libs += FileList["vendor/lib/java/*.jar"]
+```ruby
+config.java_libs += FileList["vendor/lib/java/*.jar"]
+```
 
 ## Usage
 
 Define your database connection information as expected:
 
-    development:
-      adapter: netezza
-      host: nzhostname
-      database: dbname
-      user: username
-      password: $up3r$3cr3t!
+```yaml
+development:
+  adapter: netezza
+  host: nzhostname
+  database: dbname
+  user: username
+  password: $up3r$3cr3t!
+```
 
 
 ## Contributing
