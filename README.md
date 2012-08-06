@@ -1,7 +1,32 @@
 # Activerecord::Netezza::Adapter
 
-ActiveRecord JDBC adapter for Netezza backends. The organization of this
-adapter was cribbed wholesale from 
+ActiveRecord JDBC adapter for Netezza backends.
+
+Netezza does not have a data type to map to `:text` and `:binary`. You can
+use
+[activerecord-jdbc-adapter](https://github.com/jruby/activerecord-jdbc-adapter)
+to connect if you remove those data types from the type converter lookup
+hash `AR_TO_JDBC_TYPES`. Here's the monkey patch to do so:
+
+```ruby
+require 'arjdbc/jdbc/type_converter'
+
+module ActiveRecord
+  module ConnectionAdapters
+    class JdbcTypeConverter
+      AR_TO_JDBC_TYPES.delete(:text)
+      AR_TO_JDBC_TYPES.delete(:binary)
+    end
+  end
+end
+```
+
+The disadvantage of the monkeypatch is that within a codebase using
+ARJDBC and the patch, no other JDBC driver will have the `:text` and
+`:binary` data types. This gem is intended to confine the removal of
+types to only database connections using this adapter.
+
+The organization of the adapter was cribbed wholesale from
 [Nick Sieger's CacheDB adapter](https://github.com/nicksieger/activerecord-cachedb-adapter).
 Any errors are my own.
 
