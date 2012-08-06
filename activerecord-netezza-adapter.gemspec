@@ -1,5 +1,5 @@
 # -*- encoding: utf-8 -*-
-require File.expand_path('../lib/activerecord-netezza-adapter/version', __FILE__)
+require File.expand_path('../lib/activerecord-netezza-adapter', __FILE__)
 
 Gem::Specification.new do |gem|
   gem.authors       = ["Robb Kidd"]
