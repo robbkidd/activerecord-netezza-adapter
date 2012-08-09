@@ -5,7 +5,7 @@ Gem::Specification.new do |gem|
   gem.authors       = ["Robb Kidd"]
   gem.email         = ["robb@thekidds.org"]
   gem.summary       = %q{ActiveRecord JDBC adapter for Netezza}
-  gem.description   = %q{ActiveRecord adapter for Netezza. Only for user with JRuby.
+  gem.description   = %q{ActiveRecord adapter for Netezza. For use with JRuby.
   Requires a separate Netezza JDBC driver.}
   gem.homepage      = "http://github.com/robbkidd/activerecord-netezza-adapter"
 
