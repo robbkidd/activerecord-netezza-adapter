@@ -1,3 +1,7 @@
+Note that this license covers the code used to modify the ActiveRecord
+JDBC (ARJDBC) implementation, and not ARJDBC, the Netezza driver or
+the database itself, which must be obtained from IBM/Netezza.
+
 Copyright (c) 2012 Robb Kidd
 
 MIT License
